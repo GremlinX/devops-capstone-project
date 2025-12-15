@@ -1,29 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  name: accounts
   labels:
     app: accounts
-  name: accounts
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: accounts
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: accounts
     spec:
-    template:
-      spec:
-        containers:
-        - image: IMAGE_NAME_HERE
-          name: accounts
+      containers:
+      - name: accounts
+        # Placeholder for the image
+        image: IMAGE_NAME_HERE  # This will be replaced during the pipeline run
         resources: {}
-
         env:
           - name: DATABASE_HOST
             value: postgresql
